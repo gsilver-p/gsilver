@@ -6,34 +6,90 @@
     <title>😊jieun's profile</title>
   </head>
   <style>
+    header,
+    footer {
+      border: 1px solid;
+    }
+    section {
+      display: flex;
+    }
+
     .nav_container {
       border: 1px solid;
-      width: 150px;
+      width: 20%;
       height: 700px;
     }
+    .section_container {
+      border: 1px solid;
+      width: 80%;
+      height: 700px;
+    }
+
+    li {
+      list-style: none;
+      margin-top: 5px;
+    }
+
+    .header_logo {
+      padding: 13px;
+    }
+
+    .header_logo .footer_content {
+      position: fixed;
+    }
   </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      init()
+    })
+
+    function init() {
+      const menuList = ["home","profile","project","about"];
+      
+      menuList.forEach((id)=>{
+        document.getElementById(id).addEventListener("click", function () {
+          document.getElementById("sectionContainer").innerHTML = "<div>"+id+"</div>"
+        })
+      })
+
+    }
+
+
+  </script>
   <body>
     <div>
-      <header></header>
-      <nav>
+      <header>
+        <div class="header_logo">
+          <p class="logo" id="logo">JIEUN.PARK</p>
+        </div>
+      </header>
+
+      <section>
         <div class="nav_container">
           <div class="nav_section">
             <div>
               <ul>
-                <li>home</li>
-
-                <li>profile</li>
-
-                <li>project</li>
-
-                <li>about</li>
+                <li class="side-bar" id="home">home</li>
+                <li class="side-bar" id="profile">profile</li>
+                <li class="side-bar" id="project">project</li>
+                <li class="side-bar" id="about">about</li>
               </ul>
             </div>
           </div>
         </div>
-      </nav>
-      <section></section>
-      <footer></footer>
+
+        <div class="section_container" id="sectionContainer">
+          
+            
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="footer_content">
+          <p>https://gsilver-p.github.io/gsilver/</p>
+        </div>
+      </footer>
     </div>
   </body>
 </html>
