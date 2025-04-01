@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    font-family: sans-serif;
+  }
+  
+  header, footer {
+    width: 100%;
+    border: 1px solid;
+    padding: 10px 20px;
+  }
+  
+  header, footer {
+    background-color: rgb(4, 49, 23);
+  }
+  
+  .header_logo {
+    font-size: 35px;
+    color: rgb(255, 247, 237);
+    font-weight: bold;
+    font-style: italic;
+    cursor: point
+  }
+  
+  .header_logo:hover {
+    color: rgb(145, 145, 145)
+  }
+  
+  section {
+    display: flex;
+    height: calc(100vh - 120px); /* 헤더,푸터 제외한한 전체 높이 */
+  }
+  
+  .nav_container {
+    border: 0.5px solid;
+    width: 20%;
+    min-width: 180px;
+    padding: 20px;
+    background:  rgb(249, 246, 243);
+  }
+  
+  .section_container {
+    background-color: rgb(249, 246, 243);
+    border: 0.5px solid;
+    width: 80%;
+    padding: 20px;
+    overflow-y: auto;
+    background-image: url('/img/test.jpg');
+    background-size: cover;
+    opacity: 1;
+    transition :opacity 1s ease-in-out;
+  }
+  
+  .section_container.fade_out {
+    opacity: 0;
+  }
+  
+  .logo {
+    cursor: pointer;
+  }
+  
+  li {
+    list-style: none;
+    margin: 10px 0;
+    cursor: pointer;
+    font-size: 35px;
+    font-style: italic;
+    font-weight: bold;
+    color: silver;
+    position: relative;
+  }
+  
+  li::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transform: scaleX(0);
+    transform-origin: left;
+    width: 30%;
+    height: 2px;
+    background-color: rgb(4, 49, 23);
+    transition: transform 0.5s ease;
+  }
+  
+  li:hover {
+    color:rgb(4, 49, 23);
+  }
+  
+  li:hover::after {
+    transform: scaleX(1);
+  }
+  
+  .footer_content {
+    text-align: right;
+    font-size: 22px;
+    font-weight: bold;
+    font-style: italic;
+    color: rgb(255, 247, 237);
+  }
+  
+  /*  반응형 */
+  @media (max-width: 768px) {
+    section {
+      flex-direction: column;
+    }
+  
+    .nav_container, .section_container {
+      width: 100%;
+      height: auto;
+    }
+  
+    .nav_container {
+      order: 1;
+    }
+  
+    .section_container {
+      order: 2;
+    }
+  }
