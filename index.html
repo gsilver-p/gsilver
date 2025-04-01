@@ -4,7 +4,125 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>😊jieun's profile</title>
-    <link rel="stylesheet" href="/CSS/main.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <style>
+      * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: sans-serif;
+}
+
+header, footer {
+  width: 100%;
+  border: 1px solid;
+  padding: 10px 20px;
+}
+
+header, footer {
+  background-color: rgb(4, 49, 23);
+}
+
+.header_logo {
+  font-size: 45px;
+  color: rgb(255, 247, 237);
+  font-weight: bold;
+  font-style: italic;
+  cursor: point
+}
+
+.header_logo:hover {
+  color: rgb(145, 145, 145)
+}
+
+section {
+  display: flex;
+  height: calc(100vh - 120px); /* 헤더,푸터 제외한한 전체 높이 */
+}
+
+.nav_container {
+  border: 0.5px solid;
+  width: 20%;
+  min-width: 180px;
+  padding: 20px;
+  background:  rgb(249, 246, 243);
+}
+
+.section_container {
+  background-color: rgb(249, 246, 243);
+  border: 0.5px solid;
+  width: 80%;
+  padding: 20px;
+  overflow-y: auto;
+  background-image: none
+  
+  ;
+}
+
+li {
+  list-style: none;
+  margin: 10px 0;
+  cursor: pointer;
+  font-size: 35px;
+  font-style: italic;
+  font-weight: bold;
+  color: silver;
+  position: relative;
+}
+
+li::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transform: scaleX(0);
+  transform-origin: left;
+  width: 30%;
+  height: 2px;
+  background-color: rgb(4, 49, 23);
+  transition: transform 0.5s ease;
+}
+
+li:hover {
+  color:rgb(4, 49, 23);
+}
+
+li:hover::after {
+  transform: scaleX(1);
+}
+
+.footer_content {
+  text-align: right;
+  font-size: 30px;
+  font-weight: bold;
+  font-style: italic;
+  color: rgb(255, 247, 237);
+}
+
+/*  반응형 */
+@media (max-width: 768px) {
+  section {
+    flex-direction: column;
+  }
+
+  .nav_container, .section_container {
+    width: 100%;
+    height: auto;
+  }
+
+  .nav_container {
+    order: 1;
+  }
+
+  .section_container {
+    order: 2;
+  }
+}
+    </style>
   </head>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -35,10 +153,10 @@
           <div class="nav_section">
             <div>
               <ul>
-                <li class="side-bar" id="home">home</li>
-                <li class="side-bar" id="profile">profile</li>
-                <li class="side-bar" id="project">project</li>
-                <li class="side-bar" id="about">about</li>
+                <li class="side_bar" id="home">home</li>
+                <li class="side_bar" id="profile">profile</li>
+                <li class="side_bar" id="project">project</li>
+                <li class="side_bar" id="about">about</li>
               </ul>
             </div>
           </div>
@@ -46,10 +164,10 @@
 
         <div class="section_container" id="sectionContainer">
           
-            
-          </div>
         </div>
+        
       </section>
+    </div>
 
       <footer>
         <div class="footer_content">
