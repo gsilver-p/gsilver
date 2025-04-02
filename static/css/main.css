@@ -6,7 +6,7 @@
   
   html, body {
     height: 100%;
-    font-family: sans-serif;
+    font-family: pretendard;
   }
   
   header, footer {
@@ -16,11 +16,11 @@
   }
   
   header, footer {
-    background-color: rgb(4, 49, 23);
+    background-color: black;
   }
   
   .header_logo {
-    font-size: 35px;
+    font-size: 26px;
     color: rgb(255, 247, 237);
     font-weight: bold;
     font-style: italic;
@@ -28,38 +28,56 @@
   }
   
   .header_logo:hover {
-    color: rgb(145, 145, 145)
+    color: rgb(145, 145, 145);
   }
   
   section {
     display: flex;
-    height: calc(100vh - 120px); /* 헤더,푸터 제외한한 전체 높이 */
+    height: calc(100vh - 93px); /* 헤더,푸터 제외한한 전체 높이 */
   }
   
   .nav_container {
-    border: 0.5px solid;
-    width: 20%;
+    border: none;
+    width: 15%;
     min-width: 180px;
     padding: 20px;
-    background:  rgb(249, 246, 243);
+    background: black;
   }
   
   .section_container {
-    background-color: rgb(249, 246, 243);
+    background-color:black;
     border: 0.5px solid;
-    width: 80%;
+    width: 85%;
     padding: 20px;
     overflow-y: auto;
-    background-image: url('img/test.jpg');
+    background-image: url('img/main.jpg');
     background-size: cover;
     opacity: 1;
     transition :opacity 1s ease-in-out;
+    border: none;
+}
+
+  .section_content {
+    font-family: "Noto Sans KR", sans-serif;
+    color: white;
+    margin: 350px;
   }
   
   .section_container.fade_out {
     opacity: 0;
   }
-  
+
+  .infoTitle{
+    font-size: 60px;
+    margin: 0PX 0PX 10PX 60PX;
+  }
+
+  .infoNameZone {
+    font-size: 35px;
+    margin: 0px 0px 0px 70px;
+    
+  }
+
   .logo {
     cursor: pointer;
   }
@@ -68,10 +86,10 @@
     list-style: none;
     margin: 10px 0;
     cursor: pointer;
-    font-size: 35px;
+    font-size: 25px;
     font-style: italic;
     font-weight: bold;
-    color: silver;
+    color: rgb(145, 145, 145);
     position: relative;
   }
   
@@ -82,14 +100,14 @@
     bottom: -6px;
     transform: scaleX(0);
     transform-origin: left;
-    width: 30%;
+    width: 45%;
     height: 2px;
-    background-color: rgb(4, 49, 23);
+    background-color:white;
     transition: transform 0.5s ease;
   }
   
   li:hover {
-    color:rgb(4, 49, 23);
+    color: white;
   }
   
   li:hover::after {
@@ -98,28 +116,38 @@
   
   .footer_content {
     text-align: right;
-    font-size: 22px;
+    font-size: 15px;
     font-weight: bold;
     font-style: italic;
     color: rgb(255, 247, 237);
   }
+
+  /* 프로필 섹션 */
+  .profile {
+    font-family: Noto Sans KR;
+    font-size: 28px;
+    width: 60%;
+    margin: 300px 0px 0px 680px ;
+  }
   
-  /*  반응형 */
-  @media (max-width: 768px) {
-    section {
-      flex-direction: column;
-    }
+  .label {
+    font-weight: bold;
+    color:rgb(145, 145, 145);
+    display: inline-block;
+    width: 120px;
+    margin-bottom: 20px;
+  }
   
-    .nav_container, .section_container {
-      width: 100%;
-      height: auto;
-    }
+  .key {
+    color: #ddd;
+    display: inline-block;
+  }
   
-    .nav_container {
-      order: 1;
-    }
+  a.key {
+    color: #4fa3d1;
+    text-decoration: none;
+  }
   
-    .section_container {
-      order: 2;
-    }
+  a.key:hover {
+    text-decoration: underline;
   }
