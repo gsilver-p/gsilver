@@ -107,7 +107,7 @@ const backgrounds = {
   },
 
   about: () => {
-    document.querySelector(".section_container").style.backgroundColor = "red"
+    document.querySelector(".section_container").style.backgroundColor = "black"
   },
 }
 
