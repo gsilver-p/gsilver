@@ -17,6 +17,10 @@
     background-color: black;
   }
 
+  header {
+    border-bottom: 1px solid white;
+  }
+
   footer {
     position: absolute;
     bottom: 0;
@@ -64,7 +68,6 @@
     width: 85%;
     height: 100%;
     overflow: hidden;
-    background-image: url('img/main.jpg');
     background-size: cover;
     opacity: 1;
     transition :opacity 1s ease-in-out;
@@ -163,3 +166,140 @@
   a.key:hover {
     text-decoration: underline;
   }
+
+  /* 프로젝트 섹션 */
+  .project-container {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    gap: 20px; 
+    flex-wrap: wrap; 
+    width: 100%;
+    padding: 20px 0;
+  }
+  
+  .project-item {
+    width: 350px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  .project-item img {
+    width: 100%; 
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .project-item:hover img {
+    transform: scale(1.05); 
+  }
+  
+  .view-detail {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border-radius: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .project-item:hover .view-detail {
+    opacity: 1;
+  }
+
+  .popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .popup-content {
+    position: relative;
+    width: 90vw; /* 크기 키움 */
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* 넘치는 이미지 방지 */
+  }
+  
+  .slider-container {
+    width: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .image-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+  }
+  
+  .popup-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+  
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+  
+  .prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+  }
+  
+  .prev {
+    left: 15px;
+  }
+  
+  .next {
+    right: 15px;
+  }
+  
+  
