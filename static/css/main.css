@@ -148,9 +148,10 @@
   /* 프로필 섹션 */
   .profile {
     font-family: Noto Sans KR;
-    font-size: 28px;
-    width: 60%;
-    margin-left: 45% ;
+    font-size: 3vh;
+    width: 40vw;
+    margin-top: 8vh;
+    margin-left: 45vw ;
   }
   
   .label {
@@ -252,6 +253,7 @@
     justify-content: center;
     align-items: center;
     overflow: hidden; /* 넘치는 이미지 방지 */
+    background-color: white;
   }
   
   .slider-container {
@@ -277,10 +279,10 @@
   
   .close {
     position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 30px;
-    color: white;
+    top: 2vh;
+    right: 2vw;
+    font-size: 5vh;
+    color:  rgb(145, 145, 145);
     cursor: pointer;
     background: none;
     border: none;
@@ -290,23 +292,25 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 40px;
-    color: white;
+    font-size: 5vh;
+    color:rgb(145, 145, 145);
     background: none;
     border: none;
     cursor: pointer;
-    width: 50px;
-    height: 50px;
+    width: 6vw;
+    height: 10vh;
     text-align: center;
     line-height: 50px;
   }
   
   .prev {
-    left: 15px;
+    left: 1.5vw;
   }
   
   .next {
-    right: 15px;
+    right: 1.5vw;
   }
   
+  /* 스킬 섹션 */
+
   
