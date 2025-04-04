@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 function init() {
-  const menuList = ["logo", "home", "profile", "project", "about"]
+  const menuList = ["logo", "Home", "Profile", "Project", "Skill"]
 
   menuList.forEach((menu) => {
     document.getElementById(menu).addEventListener("click", () => {

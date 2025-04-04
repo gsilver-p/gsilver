@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 function init() {
-  const menuList = ["logo", "home", "profile", "project", "about"]
+  const menuList = ["logo", "Home", "Profile", "Project", "Skill"]
 
   menuList.forEach((menu) => {
     document.getElementById(menu).addEventListener("click", () => {
@@ -48,14 +48,15 @@ const backgrounds = {
     window.location.reload()
   },
 
-  home: () => {
+  Home: () => {
     window.location.reload()
   },
 
-  profile: () => {
+  Profile: () => {
     const sectionContainer = document.getElementById("sectionContainer")
 
     sectionContainer.innerHTML = `
+              <div class="menu-name">Profile</div>
               <div class="profile">
                 <p class="label">이름: </p>
                 <p class="key">박지은</p><br>
@@ -73,8 +74,9 @@ const backgrounds = {
             `
   },
 
-  project: () => {
+  Project: () => {
     document.getElementById("sectionContainer").innerHTML = `
+            <div class="menu-name">Project</div>
             <div class="project-container">
             <div class="project-item" data-project="kakao">
               <img src="./img/kakao.png" alt="miniProject">
@@ -106,15 +108,16 @@ const backgrounds = {
     })
   },
 
-  about: () => {
-    document.querySelector(".section_container").style.backgroundColor = "black"
+  Skill: () => {
+    document.getElementById("sectionContainer").innerHTML =`
+        <div class="menu-name">Skill</div>
+    `
   },
 }
 
 // 슬라이드 팝업 열기
 function openSlider(images) {
     if (!images || images.length === 0) {
-      console.log("❌ 이미지가 없음!", images);
       return;
     }
   
