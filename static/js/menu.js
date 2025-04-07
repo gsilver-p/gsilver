@@ -1,11 +1,13 @@
 const projectImages = {
   kakao: [
+    "./img/kakao-info.jpg",
     "./img/kakao1.png",
     "./img/kakao2.png",
     "./img/kakao3.png",
     "./img/kakao4.png",
   ],
   interior: [
+    "./img/interior-info.jpg",
     "./img/interior1.png",
     "./img/interior2.png",
     "./img/interior3.png",
@@ -13,6 +15,11 @@ const projectImages = {
     "./img/interior5.png",
   ],
 }
+
+const githubLinks = {
+  kakao: Array(5).fill(null),
+  interior: Array(6).fill("https://github.com/SouthSea0613/sheep/")
+};
 
 document.addEventListener("DOMContentLoaded", () => {
   init()
@@ -39,7 +46,7 @@ document
     const project = item.getAttribute("data-project").toLowerCase()
 
     if (projectImages[project]) {
-      openSlider(projectImages[project])
+      openSlider(projectImages[project],project)
     }
   })
 
@@ -116,7 +123,7 @@ const backgrounds = {
 }
 
 // 슬라이드 팝업 열기
-function openSlider(images) {
+function openSlider(images, projectKey) {
     if (!images || images.length === 0) {
       return;
     }
@@ -128,6 +135,23 @@ function openSlider(images) {
     if (existingPopup) {
       existingPopup.remove();
     }
+
+    // 깃 주소 넣기
+  function updateGithubLink(index) {
+  const container = document.getElementById("github-link-container");
+  container.innerHTML = ""; // 초기화
+
+  const links = githubLinks[projectKey];
+  const link = links?.[index];
+  if (link) {
+    const anchor = document.createElement("a");
+    anchor.href = link;
+    anchor.target = "_blank";
+    anchor.className = "github-link";
+    anchor.textContent = "GitHub 바로가기";
+    container.appendChild(anchor);
+  }
+}
   
     // 팝업 HTML 생성
     const popup = document.createElement("div");
@@ -140,11 +164,14 @@ function openSlider(images) {
                     ${images.map(img => `<img src="${img}" class="popup-image">`).join("")}
                 </div>
             </div>
+            <div id="github-link-container"></div>
             <button class="prev">&lt;</button>
             <button class="next">&gt;</button>
         </div>
     `;
     document.body.appendChild(popup);
+    updateGithubLink(currentIndex);
+    
 
     const imageTrack = popup.querySelector(".image-track");
     const prevBtn = popup.querySelector(".prev");
@@ -153,6 +180,7 @@ function openSlider(images) {
 
     function updateSlide() {
         imageTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+        updateGithubLink(currentIndex);
     }
 
     prevBtn.addEventListener("click", () => {
