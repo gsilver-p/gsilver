@@ -25,9 +25,10 @@ const githubLinks = {
 
 // 스킬 이미지
 const skillImages = [
-  "./img/skill-html.png",
-  "./img/skill-css.png",
-  "./img/skill-js.png"
+  "./img/skill1.png",
+  "./img/skill2.png",
+  "./img/skill3.png",
+  "./img/skill4.png"
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -73,6 +74,9 @@ const backgrounds = {
 
     sectionContainer.innerHTML = `
               <div class="menu-name">Profile</div>
+              <div>
+              <img src="./img/jieun.jpg" class="jieun" alt="jieun">
+              </div>
               <div class="profile">
                 <p class="label">이름: </p>
                 <p class="key">박지은</p><br>
@@ -129,10 +133,8 @@ const backgrounds = {
       <div class="menu-name">Skill</div>
       <div class="skill-slider">
         <img id="skillImage" src="${skillImages[0]}" class="skill-img">
-        <div class="skill-buttons">
           <button id="skillPrev" class="skill-btn">&lt;</button>
           <button id="skillNext" class="skill-btn">&gt;</button>
-        </div>
       </div>
     `;
   
@@ -148,6 +150,10 @@ const backgrounds = {
       currentSkillIndex = (currentSkillIndex + 1) % skillImages.length;
       skillImage.src = skillImages[currentSkillIndex];
     });
+  },
+
+  about: () => {
+
   }
 }
 
