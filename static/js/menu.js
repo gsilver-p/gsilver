@@ -1,3 +1,4 @@
+// 프로젝트 이미지
 const projectImages = {
   kakao: [
     "./img/kakao-info.jpg",
@@ -16,10 +17,18 @@ const projectImages = {
   ],
 }
 
+// 깃 링크
 const githubLinks = {
   kakao: Array(5).fill(null),
   interior: Array(6).fill("https://github.com/SouthSea0613/sheep/")
 };
+
+// 스킬 이미지
+const skillImages = [
+  "./img/skill-html.png",
+  "./img/skill-css.png",
+  "./img/skill-js.png"
+];
 
 document.addEventListener("DOMContentLoaded", () => {
   init()
@@ -116,13 +125,33 @@ const backgrounds = {
   },
 
   Skill: () => {
-    document.getElementById("sectionContainer").innerHTML =`
-        <div class="menu-name">Skill</div>
-    `
-  },
+    document.getElementById("sectionContainer").innerHTML = `
+      <div class="menu-name">Skill</div>
+      <div class="skill-slider">
+        <img id="skillImage" src="${skillImages[0]}" class="skill-img">
+        <div class="skill-buttons">
+          <button id="skillPrev" class="skill-btn">&lt;</button>
+          <button id="skillNext" class="skill-btn">&gt;</button>
+        </div>
+      </div>
+    `;
+  
+    let currentSkillIndex = 0;
+    const skillImage = document.getElementById("skillImage");
+  
+    document.getElementById("skillPrev").addEventListener("click", () => {
+      currentSkillIndex = (currentSkillIndex - 1 + skillImages.length) % skillImages.length;
+      skillImage.src = skillImages[currentSkillIndex];
+    });
+  
+    document.getElementById("skillNext").addEventListener("click", () => {
+      currentSkillIndex = (currentSkillIndex + 1) % skillImages.length;
+      skillImage.src = skillImages[currentSkillIndex];
+    });
+  }
 }
 
-// 슬라이드 팝업 열기
+// 프로젝트 슬라이드 팝업 열기
 function openSlider(images, projectKey) {
     if (!images || images.length === 0) {
       return;
