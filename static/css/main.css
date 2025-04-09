@@ -390,7 +390,7 @@ a.key:hover {
   }
 
   .menu-name {
-    display: none; /* 모바일에선 위치 애매하니 제거 */
+    display: none; /* 모바일에선 위치 애매하니 제거하자! */
   }
 
   .section_container {
@@ -408,18 +408,19 @@ a.key:hover {
   }
 
   .profile {
-    width: 90vw;
-    margin: 4vh auto;
-    font-size: 2.2vh;
+    width: 70vw;
+    margin: 4vh, 1vw, 2vh, 2vw;
+    font-size: 1.5vh;
+
   }
 
   .label {
-    width: 30vw;
-    font-size: 2vh;
+    width: 8vw;
+    font-size: 1.5vh;
   }
 
   img.jieun {
-    width: 60vw;
+    width: 30vw;
     height: auto;
   }
 
@@ -429,11 +430,16 @@ a.key:hover {
   }
 
   .skill-img {
+    margin-left: 8vw;
     width: 90vw;
   }
 
   #skillPrev {
-    margin-left: -36vw;
+    margin-left: -91vw;
+  }
+
+  #skillNext {
+    margin-left: -4.2vw;
   }
 
   .popup-content {
